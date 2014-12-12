@@ -44,7 +44,7 @@ $recordSet = mysql_query("SELECT * FROM idota_rekishi_spot", $db);
 		$('.slick').slick({
 			dots : true,
 			autoplay:true,
-			autoplaySpeed:2000,
+			autoplaySpeed:10000,
 		});
 	});
 </script>
@@ -77,11 +77,11 @@ $recordSet = mysql_query("SELECT * FROM idota_rekishi_spot", $db);
 </header>
 
 <div class="container" >
-	<ui class="nav nav-tabs nav-justified">
-		<li class="active"><a href="../idota_rekishi/">Home</a></li>
-		<li><a href="post.php">POST</a></li>
-		<li><a href="javascript:location.reload(true);" data-role="button" data-icon="refresh">更新</a></li>
-	</ul>
+		<ui class="nav nav-tabs nav-justified">
+			<li><a href="../idota_rekishi/">Home</a></li>
+			<li><a href="post.php">POST</a></li>
+			<li><a href="javascript:location.reload(true);" data-role="button" data-icon="refresh">更新</a></li>
+		</ul>
 	<br />
 	
 	<div class="slick">
@@ -98,17 +98,10 @@ $recordSet = mysql_query("SELECT * FROM idota_rekishi_spot", $db);
 				}
 			?>
 	</div>
-	
-	
-
 </div>
-
-
 <footer>
 	<h4 class="text-center">&copy;YESLab,Nagoya University</h4>
 </footer>
-
-
 </body>
 </html>
 
