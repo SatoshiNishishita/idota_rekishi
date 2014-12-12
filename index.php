@@ -29,7 +29,7 @@ $recordSet = mysql_query("SELECT * FROM idota_rekishi_spot", $db);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<title>PhotoPoster</title>
+<title>井戸田の歴史</title>
 
 <!--Bootstrap-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -60,15 +60,53 @@ $recordSet = mysql_query("SELECT * FROM idota_rekishi_spot", $db);
 		color: #0080FF;
 	}
 </style>
+
+<!--css-->
+<style type="text/css">
+	body{
+		background-color:#DEB887	;
+	}
+
+</style >
+
 </head>
 
 <body>
+<header>
+	<h1 class="text-center">井戸田の歴史</h1>
+</header>
+
+<div class="container" >
+	<ui class="nav nav-tabs nav-justified">
+		<li class="active"><a href="../idota_rekishi/">Home</a></li>
+		<li><a href="post.php">POST</a></li>
+		<li><a href="javascript:location.reload(true);" data-role="button" data-icon="refresh">更新</a></li>
+	</ul>
+	<br />
+	
+	<div class="slick">
+		<?php
+			while($data = mysql_fetch_assoc($recordSet)){
+		?>
+				<div>
+					<h2 class="text-center"><?php echo $data['spot_name'];?></h2>
+					<img src="spot_img/spot<?php echo $data['spot_id']; ?>.jpg" width="100%" class="img-responsive" style="border:solid 2px #ccc; padding:4px;" >
+					<br />
+					<label><?php echo $data['spot_text']; ?></label>
+				</div>
+			<?php
+				}
+			?>
+	</div>
+	
+	
+
+</div>
 
 
-
-
-
-
+<footer>
+	<h4 class="text-center">&copy;YESLab,Nagoya University</h4>
+</footer>
 
 
 </body>
